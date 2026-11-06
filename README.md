@@ -20,10 +20,12 @@ pnpm build
 pnpm preview
 ```
 
-The static output is written to `build/`. `static/CNAME` preserves the custom domain in that output. The previous root-level Solo export is intentionally retained until the Pages deployment source is switched and the new site is verified.
+The static output is written to `build/`. `static/CNAME` preserves the custom domain in that output. The previous root-level Solo export is intentionally retained until the Pages deployment source is switched and the new site is verified. Pull requests and feature-branch pushes run check, unit tests, and a production build; deployment remains controlled by the existing GitHub Pages configuration.
 
 ## Mental-Load-Check
 
 Question text and dimension IDs live in `src/lib/mental-load/questions.ts`; `scoring.ts` contains the pure, versioned client-side calculation. Answers are held in memory only. They are not submitted, persisted, or sent to analytics.
+
+Denklabor articles live in `src/content/blog/*.md` with validated YAML frontmatter and are prerendered at build time.
 
 The existing content draft and design source remain in `docs/julia-mental-load/`. Keep those references aligned when reviewing questionnaire wording or visual decisions.

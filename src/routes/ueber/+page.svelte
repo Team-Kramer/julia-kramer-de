@@ -18,21 +18,30 @@
 	<div class="prose">
 		<h2>Worum es mir hier geht</h2>
 		<p>
-			Ich bin Julia Kramer. In diesem Labor teile ich Ansätze, die mentale Last nicht als
-			persönliche Schwäche behandeln, sondern als Frage von Aufgaben, Erwartungen und
-			Zuständigkeiten sichtbar machen.
+			Ich bin Julia Kramer. Seit über einem Jahrzehnt arbeite ich an der Universität Paderborn als
+			wissenschaftliche Mitarbeiterin und Assistentin am Lehrstuhl für Managerial Economics. In
+			dieser Zeit habe ich Lehre und Forschung begleitet, Budgets geplant, Teams unterstützt,
+			Veranstaltungen organisiert und digitale Angebote mit aufgebaut.
 		</p>
 		<p>
-			Wenn im Alltag etwas nicht klappt, wird schnell nach mehr Disziplin oder besseren Routinen
-			gerufen. Doch oft liegt die Belastung nicht an fehlender Willenskraft. Sie entsteht auch
-			dadurch, dass eine Person bemerkt, plant, erinnert und Verantwortung für das Ganze übernimmt.
+			Schon während meines BWL-Studiums in Paderborn mit Schwerpunkten in Management,
+			Personalführung und Wirtschaftsinformatik habe ich Projekte geleitet und Veranstaltungen
+			organisiert. Auch mein ehrenamtliches Engagement – unter anderem in der Jugendarbeit und
+			Projektmanagement-Weiterbildung – hat meinen Blick dafür geprägt, wie viel Wirkung in guter
+			Organisation und geteilter Verantwortung steckt.
 		</p>
 		<h2>Systeme statt Motivation</h2>
 		<p>
-			Veränderung beginnt für mich mit Sichtbarkeit: Was wird getan – und was muss jemand vorher im
-			Kopf behalten? Erst dann lässt sich gemeinsam überlegen, welche Zuständigkeiten und Systeme
-			wirklich entlasten. Klarheit ist dabei wichtiger als die nächste Optimierung.
+			In vielen Arbeits- und Lebensbereichen sind es die kleinen, unsichtbaren Dinge, die den
+			Unterschied machen: bemerken, vorausdenken, abstimmen und nachhalten. Wenn im Alltag etwas
+			nicht klappt, wird schnell nach mehr Disziplin oder besseren Routinen gerufen. Mich interessiert
+			stattdessen, wie Aufgaben und Zuständigkeiten verteilt sind – und welche Systeme Menschen
+			wirklich entlasten.
 		</p>
-		<p>Das Labor sammelt kleine Werkzeuge und Gedanken, die diesen Blick in den Alltag holen.</p>
+		<p>
+			Das Mental Load Labor verbindet diese Erfahrung mit einem klaren Grundsatz: Systeme statt
+			Motivation, Klarheit statt Optimierungsdruck. Hier teile ich Werkzeuge und Gedanken, die
+			unsichtbare Arbeit sichtbar machen, ohne Menschen zu bewerten.
+		</p>
 	</div>
 </article>

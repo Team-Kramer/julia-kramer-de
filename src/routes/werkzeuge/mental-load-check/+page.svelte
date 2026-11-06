@@ -42,6 +42,7 @@
 		property="og:description"
 		content="Ein kostenloser, privater Check – ohne Bewertung und ohne Anmeldung."
 	/>
+	<meta property="og:type" content="website" />
 </svelte:head>
 
 <section class="tool-page" data-questionnaire={questionnaireVersion}>

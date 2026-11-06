@@ -5,6 +5,12 @@
 		content="Ein ruhiger Ausblick auf individuelle Begleitung rund um Mental Load, Verantwortung und alltagstaugliche Systeme."
 	/>
 	<link rel="canonical" href="https://julia-kramer.de/begleitung/" />
+	<meta property="og:title" content="Tiefer einsteigen – Mental Load Labor" />
+	<meta
+		property="og:description"
+		content="Ein ruhiger Ausblick auf individuelle Begleitung rund um Mental Load, Verantwortung und alltagstaugliche Systeme."
+	/>
+	<meta property="og:type" content="website" />
 </svelte:head>
 
 <article class="content-page">

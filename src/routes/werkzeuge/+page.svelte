@@ -5,6 +5,12 @@
 		content="Kostenlose Werkzeuge, die Mental Load sichtbar und handhabbar machen – ohne Anmeldung und ohne Bewertung."
 	/>
 	<link rel="canonical" href="https://julia-kramer.de/werkzeuge/" />
+	<meta property="og:title" content="Werkzeuge – Mental Load Labor" />
+	<meta
+		property="og:description"
+		content="Kostenlose Werkzeuge, die Mental Load sichtbar und handhabbar machen – ohne Anmeldung und ohne Bewertung."
+	/>
+	<meta property="og:type" content="website" />
 </svelte:head>
 
 <section class="content-page">

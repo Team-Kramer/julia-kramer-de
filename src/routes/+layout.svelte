@@ -9,6 +9,9 @@
 <svelte:head>
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<meta name="theme-color" content="#F7F3EB" />
+	<meta property="og:site_name" content="Mental Load Labor – Julia Kramer" />
+	<meta property="og:locale" content="de_DE" />
+	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <a class="skip-link" href="#main-content">Zum Inhalt springen</a>

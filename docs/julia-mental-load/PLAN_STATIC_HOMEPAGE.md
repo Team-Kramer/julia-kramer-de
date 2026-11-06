@@ -2,7 +2,7 @@
 
 **Updated:** 2026-11-06  
 **Owner:** Product (Martin Kramer) + implementation agent  
-**Overall status:** In progress — initial static site and client-side check are implemented and locally verified; launch decisions and review remain open  
+**Overall status:** Implementation in progress — static site, blog pipeline, SEO basics, and client-side check are built and verified; editorial/legal approvals and deployment remain open
 **Scope:** Public, non-commercial Mental Load Labor homepage and client-side tools. A future SaaS/API is explicitly out of scope.
 
 ## Objective
@@ -40,25 +40,25 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0. Decisions | In progress | SvelteKit/static chosen for implementation; hosting, approved bio/contact, and legal details remain open |
-| 1. Static foundation and design tokens | In progress | App, tokens, prerendering, and CNAME output in place; deployment workflow and host verification remain |
+| 0. Decisions | In progress | GitHub Pages is confirmed as the host; legal contact/provider facts and editorial approvals remain open |
+| 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, and validation CI are in place; deployment remains intentionally unchanged |
 | 2. Tool model and scoring | Complete | Versioned question data, guarded scoring, and unit tests implemented |
 | 3. Shared UI and navigation | In progress | Shared responsive shell and accessible controls implemented; manual assistive-technology review remains |
-| 4. Core pages and tool discovery | In progress | Home, directory, About, Denklabor, and Begleitung routes built; content/legal review remains |
-| 5. Mental-Load-Check | In progress | Client-side flow is built and tested; manual interaction and privacy QA remain |
-| 6. Denklabor and editorial foundation | In progress | Blog index and one article are prerendered; Markdown pipeline, categories, and editorial approval remain |
-| 7. Quality, legal, SEO, and launch | Not started | Placeholders are not publishable; hosting, accessibility, legal, and deployment checks remain |
+| 4. Core pages and tool discovery | In progress | Core routes, route metadata, and legal working drafts are built; editorial and legal review remain |
+| 5. Mental-Load-Check | In progress | Client-side flow passes end-to-end browser checks; manual accessibility and device QA remain |
+| 6. Denklabor and editorial foundation | In progress | Validated Markdown pipeline, static article routes, and category filters are implemented; article approval remains |
+| 7. Quality, legal, SEO, and launch | In progress | Build, route smoke tests, sitemap, robots, and hosting research are complete; legal, accessibility, and release gates remain |
 
 ## Current state
 
-- The target repository is `/Users/kram030/git/julia-kramer-de`, on branch `main`, with origin `Team-Kramer/julia-kramer-de`.
+- The target repository is `/Users/kram030/git/julia-kramer-de`, on branch `feature/mental-load`, with origin `Team-Kramer/julia-kramer-de`.
 - The original root-level Solo export (`index.html`, `assets/`, `images/`, `img/`) is still preserved and untouched. It is not copied into the SvelteKit build output.
 - A SvelteKit + TypeScript + Tailwind v4 static app now lives in the repository root. All implemented routes prerender, and `static/CNAME` carries `julia-kramer.de` into `build/`.
 - The existing prototype under `docs/julia-mental-load/src/` remains untouched. The production app implementation is in the root `src/`; decide later whether the docs prototype should be archived or removed after review.
 - `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. Existing photos were not reused because their rights and fit have not been verified.
-- No Pages deployment workflow or hosting-setting change has been made. The actual host and current deployment source still need confirmation before the build replaces the live export.
-- Local verification currently passes: `pnpm check`, 9 unit tests, `pnpm build`, and HTTP smoke tests for all 9 prerendered routes, the German 404 fallback, and `/CNAME`.
-- Impressum and Datenschutz are explicit non-publishable placeholders. Approved biography, contact method, and legal details have not been supplied.
+- GitHub Pages is confirmed as the host, configured for the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. A validation-only GitHub Actions workflow was added; deployment configuration was deliberately not changed.
+- Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and production-preview checks for all 9 prerendered HTML routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
+- About Julia now draws on the existing master profile. Impressum and Datenschutz are researched working drafts using Martin's supplied address, remain `noindex`, and are not publishable until the unresolved provider/contact and hosting details are confirmed.
 
 ## Feature inventory
 
@@ -173,8 +173,8 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Initialize the agreed SvelteKit, TypeScript, Tailwind v4, and static adapter setup in the existing repository.
 - [x] Preserve the current `CNAME` in the generated static output and retain the root-level export until the replacement is verified.
 - [x] Configure prerendered routes, German base metadata, favicon, and canonical origin `https://julia-kramer.de/` for primary content pages.
-- [ ] Add package scripts for development, formatting/linting, type checking, tests, and production build, following the selected tooling's conventions. Type check, tests, and build are present; formatter/linter remain undecided.
-- [ ] Add CI build and deployment workflow only after confirming the current hosting provider, repository settings, and deployment source.
+- [x] Add package scripts for development, type checking, tests, and production build, following the selected tooling's conventions. Formatter/linter remain undecided.
+- [x] Add CI validation for pull requests and feature-branch pushes; deployment remains gated until the live Pages source can be intentionally migrated.
 - [x] Document local setup and the current static-output/rollback approach in `README.md`.
 
 ### 1b. Design system implementation
@@ -218,10 +218,10 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 - [x] Build `/` with the hero headline **“Mental Load reduzieren – mit System statt Schuldgefühlen”**, a short approach, tool/article entry points, and a low-pressure support link.
 - [x] Build `/werkzeuge` with the Mental-Load-Check first and an accurate status for each planned tool.
-- [x] Build `/ueber` around the approved approach and principles “Systeme > Motivation” and “Klarheit > Optimierung”; Julia's detailed biography still needs approval.
+- [x] Build `/ueber` around the approach and principles “Systeme > Motivation” and “Klarheit > Optimierung”, using details from the existing master profile; Julia's final editorial approval remains.
 - [x] Build `/begleitung` as a brief, factual, non-sales invitation; no pricing, urgency, booking, or unsupported outcomes.
-- [ ] Add complete unique metadata and social preview metadata to every route; primary routes have titles/descriptions/canonicals, but this needs a route-by-route audit.
-- [ ] Add static legal routes and verify exact hosting, contact, and data-processing details before publishing legal copy. Non-publishable placeholders currently exist.
+- [x] Add unique page titles/descriptions and social preview metadata to public routes; legal drafts are explicitly `noindex`.
+- [x] Add static Impressum and Datenschutz working drafts based on official sources. Their publication remains blocked until provider, contact, and data-processing facts are confirmed.
 
 **Done when:** all core pages prerender, navigation is coherent, and the visitor can reach the first working tool from home and the tool directory.
 
@@ -233,7 +233,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Welcome screen uses the approved text: the check is not a test or evaluation and has no right or wrong answers.
 - [x] Present the 15 questions in a calm sequence with a 1–5 scale, readable labels, and clear progress.
 - [x] Allow back navigation and answer changes; all answers stay in the current in-memory session.
-- [ ] Validate that every required answer exists before calculating results; explain missing answers inline.
+- [x] Validate that every required answer exists before calculating results; keep progression disabled and explain the required answer inline.
 - [x] Calculate results client-side and show three clearly named dimensions with values/visual indicators and nonjudgmental explanatory copy.
 - [x] Include the closing idea from the draft: “Mental Load ist keine Charaktereigenschaft. Er ist verteilt – oder eben nicht.”
 - [x] Offer a restart action that clears answers and results from application memory.
@@ -253,12 +253,12 @@ Resolve these before committing to the site rewrite. Recommendations are default
 ## Phase 6 — Denklabor and editorial foundation
 *Depends on: Phase 1; can proceed in parallel with Phases 4–5.*
 
-- [ ] Implement a minimal Markdown/content pipeline that prerenders the blog index and individual posts. The current first article is a static Svelte route.
-- [ ] Add frontmatter validation for title, slug, date, description, category, and optional social image.
-- [ ] Implement categories: Mental Load, Systeme, Paare, Unsichtbare Arbeit, Entscheidungen.
+- [x] Implement a minimal Markdown/content pipeline that prerenders the blog index and individual posts.
+- [x] Add frontmatter validation for title, slug, date, description, category, and optional social image.
+- [x] Implement categories: Mental Load, Systeme, Paare, Unsichtbare Arbeit, Entscheidungen.
 - [ ] Review and approve the initial substantive article before publishing; do not add filler or “5 tips” listicles.
 - [x] The initial article offers a clear model and ends with a subtle link to the relevant tool.
-- [ ] Add publication date and reusable metadata to the article; long-form typography, reading width, and heading hierarchy are in place.
+- [x] Add publication date and reusable metadata to the article; long-form typography, reading width, and heading hierarchy are in place.
 - [x] Keep newsletter capture out of scope for v1.
 
 **Done when:** articles are statically rendered, discoverable by category, and each has a relevant, non-pushy next step.
@@ -274,18 +274,18 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### 7b. Privacy and legal
 
-- [ ] Confirm the hosting platform's request logs and any third-party resources; document actual behavior in the privacy notice.
-- [ ] Ensure the questionnaire makes no external requests containing answer data.
+- [x] Confirm the hosting platform and available documentation about request logs and third-party resources; the privacy draft describes known behavior and flags unverified retention/transfer terms.
+- [x] Ensure the questionnaire makes no external requests containing answer data.
 - [ ] Do not add analytics, cookies, external form processors, or newsletter providers without an explicit decision, consent review where applicable, and matching disclosures.
 - [ ] Verify Impressum and Datenschutz reflect the live site and current contact/hosting details before release.
 
 ### 7c. SEO and discoverability
 
-- [ ] German locale and meaningful page titles/descriptions; no duplicate titles or missing canonical URLs.
-- [ ] Open Graph metadata with an approved image or a safe text-only fallback.
-- [ ] Generate a sitemap and robots file for public static routes.
+- [x] German locale and meaningful page titles/descriptions; no duplicate titles or missing canonical URLs.
+- [x] Open Graph metadata with an approved image or a safe text-only fallback.
+- [x] Generate a sitemap and robots file for public static routes.
 - [ ] Add structured data only where accurate (for example, `Person` and `Article`); do not add product or medical claims.
-- [ ] Verify internal links, custom domain, HTTPS, redirects, and not-found behavior.
+- [x] Verify internal links, custom domain output, HTTPS configuration, sitemap/robots, and not-found behavior in the production preview; live deployment remains pending.
 
 ### 7d. Performance and deployment
 
@@ -315,11 +315,11 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 | ID | Decision | Recommendation | Status |
 |---|---|---|---|
-| D1 | Confirm static deployment host and Pages source | App uses SvelteKit/static; confirm host and repository settings before deployment workflow | In progress |
+| D1 | Confirm static deployment host and Pages source | GitHub Pages, legacy `main` root source, custom domain, and HTTPS are confirmed; keep deployment unchanged until migration is approved | Resolved |
 | D2 | Choose replacement/migration scope for the existing Solo export | New output is separate; keep old export until reviewed and verified | In progress |
 | D3 | Decide whether v1 has contact, newsletter, or result-sharing | No signup, newsletter, answer sharing, or booking/contact flow in v1 | Resolved for prototype |
 | D4 | Approve result interpretation and copy | Averages plus contextual descriptions only; no thresholds or diagnosis | Review pending |
-| D5 | Select and approve launch articles | One article draft exists; approve its content and decide on Markdown authoring | Review pending |
+| D5 | Select and approve launch articles | One article draft exists in the Markdown pipeline; Julia's editorial approval is still needed | Review pending |
 | D6 | Approve reuse of existing text, photos, and media | No legacy assets used; confirm rights before migration | Open |
 
 ## File change summary
@@ -335,9 +335,9 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### Implemented and pending additions
 
-- Implemented: SvelteKit/Tailwind project configuration, prerendered routes, shared shell, tool directory, one article, and static `CNAME`.
+- Implemented: SvelteKit/Tailwind project configuration, prerendered routes, shared shell, tool directory, Markdown article pipeline, sitemap/robots, social metadata, validation workflow, and static `CNAME`.
 - Implemented: versioned questionnaire content, pure scoring module, and scoring tests.
-- Pending: static deployment workflow, approved legal text, sitemap, Markdown authoring/frontmatter validation, and additional route/content QA.
+- Pending: legal fact confirmation and review, article/bio approval, full accessibility/device review, clean-install verification, Pages migration/release decision, and production verification.
 
 ## Reference map
 
@@ -353,20 +353,20 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 | Area | Verification |
 |---|---|
-| Static build | `pnpm check`, 9 unit tests, `pnpm build`, and local preview smoke test passed; clean install remains |
+| Static build | `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and local preview smoke tests passed; clean install remains |
 | Questionnaire | Averages, dimension order, missing/duplicate/unknown answers, invalid scale values, non-classifying copy tested |
 | Components | Type/a11y diagnostics pass; manual keyboard, screen-reader, focus, and responsive checks remain |
-| Routes/content | Nine routes and `CNAME` return HTTP 200 in the local production preview; editorial and metadata audit remains |
-| Privacy | Implementation has no answer submission or persistence; manual browser/network inspection and hosting review remain |
+| Routes/content | All 9 prerendered HTML routes, sitemap, robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
+| Privacy | Browser flow and source confirm no answer submission or persistence; hosting docs were researched, but log retention/transfer details remain unverified |
 | Accessibility | Automated scan plus keyboard, screen-reader, zoom, contrast, and reduced-motion review |
 | Deployment | `CNAME`, HTTPS, custom domain, all routes, not-found handling, sitemap/robots |
 
 ## Success criteria
 
-- [ ] julia-kramer.de presents a clear, calm Mental Load Labor identity aligned with `design.md`.
+- [x] julia-kramer.de presents a clear, calm Mental Load Labor identity aligned with `design.md`.
 - [x] Visitors can find the tools, Denklabor, About, and optional support without a sales funnel.
 - [ ] The 15-question check works end-to-end on mobile and desktop, computes three understandable summaries, and can be restarted.
 - [x] No answers are submitted or persisted by the site in v1; the privacy explanation matches the implementation.
 - [x] The site statically builds and preserves the custom domain in its output; live deployment remains pending.
-- [ ] Blog and tool content are structured for future reuse without building SaaS/API infrastructure now.
+- [x] Blog and tool content are structured for future reuse without building SaaS/API infrastructure now.
 - [ ] Accessibility, legal, privacy, SEO, and production deployment checks are complete before launch.

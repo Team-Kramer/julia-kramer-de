@@ -70,9 +70,17 @@
 		<button class="button-quiet" type="button" onclick={goBack} disabled={currentIndex === 0}>
 			← Zurück
 		</button>
-		<button class="button button-primary" type="submit" disabled={currentValue === null}>
+		<button
+			class="button button-primary"
+			type="submit"
+			aria-describedby="answer-required-hint"
+			disabled={currentValue === null}
+		>
 			{isLastQuestion ? 'Ergebnis ansehen' : 'Weiter'}
 			{#if !isLastQuestion}<span aria-hidden="true">→</span>{/if}
 		</button>
 	</div>
+	<p id="answer-required-hint" class="answer-required-hint" aria-live="polite">
+		{currentValue === null ? 'Bitte wähle eine Antwort, um fortzufahren.' : ''}
+	</p>
 </form>
