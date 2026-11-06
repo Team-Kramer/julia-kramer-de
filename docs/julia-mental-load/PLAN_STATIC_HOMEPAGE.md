@@ -58,7 +58,7 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 - `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. Existing photos were not reused because their rights and fit have not been verified.
 - GitHub Pages is confirmed as the host, configured for the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. A validation-only GitHub Actions workflow was added; deployment configuration was deliberately not changed.
 - Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and production-preview checks for all 9 prerendered HTML routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
-- About Julia now draws on the existing master profile. Impressum and Datenschutz are researched working drafts using Martin's supplied address, remain `noindex`, and are not publishable until the unresolved provider/contact and hosting details are confirmed.
+- About Julia now draws on the existing master profile. The Impressum includes the supplied contact and editorial responsibility details; the noindex Datenschutz draft still flags unresolved hosting/transfer details and the DPO status.
 
 ## Feature inventory
 
@@ -221,7 +221,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Build `/ueber` around the approach and principles “Systeme > Motivation” and “Klarheit > Optimierung”, using details from the existing master profile; Julia's final editorial approval remains.
 - [x] Build `/begleitung` as a brief, factual, non-sales invitation; no pricing, urgency, booking, or unsupported outcomes.
 - [x] Add unique page titles/descriptions and social preview metadata to public routes; legal drafts are explicitly `noindex`.
-- [x] Add static Impressum and Datenschutz working drafts based on official sources. Their publication remains blocked until provider, contact, and data-processing facts are confirmed.
+- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice remains a noindex draft pending hosting/transfer details and DPO status.
 
 **Done when:** all core pages prerender, navigation is coherent, and the visitor can reach the first working tool from home and the tool directory.
 

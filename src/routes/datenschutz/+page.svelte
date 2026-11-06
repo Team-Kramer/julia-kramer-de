@@ -9,9 +9,9 @@
 	<div class="legal-notice">
 		<strong>Entwurf – noch nicht veröffentlichen.</strong>
 		<p>
-			Vor Veröffentlichung bitte Kontakt-E-Mail, Datenschutzbeauftragte:n (falls bestellt),
-			GitHubs konkrete Speicherfristen und etwaige Drittlandübermittlungen prüfen. Diese Seite ist
-			eine sachbezogene Arbeitsfassung, keine Rechtsberatung.
+			Vor Veröffentlichung bitte prüfen, ob eine Datenschutzbeauftragte oder ein
+			Datenschutzbeauftragter bestellt ist, sowie GitHubs konkrete Speicherfristen und etwaige
+			Drittlandübermittlungen. Diese Seite ist eine sachbezogene Arbeitsfassung, keine Rechtsberatung.
 		</p>
 	</div>
 	<div class="prose">
@@ -21,7 +21,7 @@
 			Am Anger 4<br />
 			33758 Schloß Holte-Stukenbrock<br />
 			Deutschland<br />
-			E-Mail: <strong>[E-Mail-Adresse vor Veröffentlichung ergänzen]</strong>
+			E-Mail: <a href="mailto:info@julia-kramer.de">info@julia-kramer.de</a>
 		</p>
 
 		<h2>Besuch dieser Website und Hosting</h2>
@@ -34,13 +34,12 @@
 				GitHub Privacy Statement
 			</a>.
 			Die dort zugänglichen GitHub-Pages-Angaben nennen keine konkrete Speicherfrist für diese
-			Zugriffsprotokolle. Diese Frist und die für GitHub-Pages geltenden Übermittlungsbedingungen
-			müssen vor Veröffentlichung beim Anbieter geprüft werden.
+			Zugriffsprotokolle. Die konkrete Frist und die für GitHub-Pages geltenden
+			Übermittlungsbedingungen sind vor Veröffentlichung beim Anbieter zu prüfen.
 		</p>
 		<p>
 			Die Website selbst setzt keine Analyse- oder Marketingdienste ein. Sie lädt keine externen
-			Schriftarten. Bitte Hosting- und Browserverhalten vor Veröffentlichung technisch erneut
-			prüfen.
+			Schriftarten.
 		</p>
 
 		<h2>Mental-Load-Check</h2>
@@ -54,8 +53,8 @@
 		<p>
 			Die Bereitstellung der Website und die Abwehr technischer Angriffe dienen dem berechtigten
 			Interesse an einem sicheren und funktionsfähigen Online-Angebot. Soweit personenbezogene Daten
-			durch den Hostinganbieter verarbeitet werden, ist die konkrete Rechtsgrundlage und
-			Verantwortungsverteilung vor Veröffentlichung zu überprüfen.
+			durch den Hostinganbieter verarbeitet werden, sind die konkrete Rechtsgrundlage und
+			Verantwortungsverteilung noch zu prüfen.
 		</p>
 
 		<h2>Empfänger und mögliche Übermittlung</h2>
@@ -63,8 +62,7 @@
 			Technische Verbindungsdaten werden bei GitHub Pages verarbeitet. GitHub veröffentlicht
 			Informationen zu seinen Gesellschaften, Verarbeitungsorten und Übermittlungen in seiner
 			Datenschutzerklärung. Die konkret einschlägige GitHub-Gesellschaft und etwaige Garantien für
-			Übermittlungen außerhalb des Europäischen Wirtschaftsraums sind vor Veröffentlichung zu
-			verifizieren.
+			Übermittlungen außerhalb des Europäischen Wirtschaftsraums sind noch zu verifizieren.
 		</p>
 
 		<h2>Speicherdauer</h2>
@@ -79,8 +77,7 @@
 			Im Rahmen der gesetzlichen Voraussetzungen hast du insbesondere das Recht auf Auskunft,
 			Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch
 			gegen Verarbeitungen auf Grundlage berechtigter Interessen. Zur Ausübung dieser Rechte oder
-			für Fragen zum Datenschutz wende dich an den Verantwortlichen. Die Kontakt-E-Mail muss vor
-			Veröffentlichung ergänzt werden.
+			für Fragen zum Datenschutz wende dich an den Verantwortlichen.
 		</p>
 		<p>
 			Du kannst dich außerdem bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere bei der
