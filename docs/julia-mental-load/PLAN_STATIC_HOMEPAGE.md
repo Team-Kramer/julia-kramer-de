@@ -40,7 +40,7 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0. Decisions | In progress | GitHub Pages is confirmed as the host; legal contact/provider facts and editorial approvals remain open |
+| 0. Decisions | In progress | GitHub Pages is confirmed as the host; GitHub log/DPA scope, DPO status, and editorial approvals remain open |
 | 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, and validation CI are in place; deployment remains intentionally unchanged |
 | 2. Tool model and scoring | Complete | Versioned question data, guarded scoring, and unit tests implemented |
 | 3. Shared UI and navigation | In progress | Shared responsive shell and accessible controls implemented; manual assistive-technology review remains |
@@ -55,10 +55,10 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 - The original root-level Solo export (`index.html`, `assets/`, `images/`, `img/`) is still preserved and untouched. It is not copied into the SvelteKit build output.
 - A SvelteKit + TypeScript + Tailwind v4 static app now lives in the repository root. All implemented routes prerender, and `static/CNAME` carries `julia-kramer.de` into `build/`.
 - The existing prototype under `docs/julia-mental-load/src/` remains untouched. The production app implementation is in the root `src/`; decide later whether the docs prototype should be archived or removed after review.
-- `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. The About page uses Julia's supplied profile copy and optimized local versions of the referenced legacy images; image-use rights still need confirmation.
+- `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested.
 - GitHub Pages is confirmed as the host, configured for the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. A validation-only GitHub Actions workflow was added; deployment configuration was deliberately not changed.
 - Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and production-preview checks for all 9 prerendered HTML routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
-- The About page uses Julia's newly supplied profile copy and optimized local versions of the referenced legacy images; image-use rights still need confirmation. The Impressum includes the supplied contact and editorial responsibility details; the noindex Datenschutz draft still flags unresolved hosting/transfer details and the DPO status.
+- The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested. The Impressum includes the supplied contact and editorial responsibility details; the noindex Datenschutz draft describes GitHub's published transfer disclosures and flags unresolved log retention, DPA scope, and DPO status.
 
 ## Feature inventory
 
@@ -161,9 +161,9 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### D6 — Existing media and brand assets
 
-**Recommendation:** confirm usage rights and relevance for the five profile images supplied with Julia's copy. They are stored as optimized local assets; do not add other legacy media or assets from the other family sites without review.
+**Recommendation:** use the five existing profile images selected for Julia's supplied copy as optimized local assets. Do not add other legacy media or assets from the other family sites without review.
 
-**Owner:** Design / Product. **Status:** ⬜ Open — the supplied profile images are selected and optimized; rights confirmation is still needed before release.
+**Owner:** Design / Product. **Status:** ✅ Image selection resolved — Julia requested the existing images, which are optimized and served locally. Confirm any applicable license obligations before production release.
 
 ## Phase 1 — Static foundation and design tokens
 *Depends on: D1 and D2.*
@@ -221,7 +221,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Build `/ueber` using Julia's supplied profile copy and image references; confirm image-use rights before release.
 - [x] Build `/begleitung` as a brief, factual, non-sales invitation; no pricing, urgency, booking, or unsupported outcomes.
 - [x] Add unique page titles/descriptions and social preview metadata to public routes; legal drafts are explicitly `noindex`.
-- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice remains a noindex draft pending hosting/transfer details and DPO status.
+- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice remains a noindex draft pending exact GitHub Pages log-retention/DPA-scope details, DPO status, and final review.
 
 **Done when:** all core pages prerender, navigation is coherent, and the visitor can reach the first working tool from home and the tool directory.
 
@@ -274,7 +274,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### 7b. Privacy and legal
 
-- [x] Confirm the hosting platform and available documentation about request logs and third-party resources; the privacy draft describes known behavior and flags unverified retention/transfer terms.
+- [x] Confirm the hosting platform and available documentation about request logs, international transfers, and third-party resources; the privacy draft describes GitHub's published disclosures and flags unresolved log-retention and DPA-scope details.
 - [x] Ensure the questionnaire makes no external requests containing answer data.
 - [ ] Do not add analytics, cookies, external form processors, or newsletter providers without an explicit decision, consent review where applicable, and matching disclosures.
 - [ ] Verify Impressum and Datenschutz reflect the live site and current contact/hosting details before release.
@@ -320,7 +320,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 | D3 | Decide whether v1 has contact, newsletter, or result-sharing | No signup, newsletter, answer sharing, or booking/contact flow in v1 | Resolved for prototype |
 | D4 | Approve result interpretation and copy | Averages plus contextual descriptions only; no thresholds or diagnosis | Review pending |
 | D5 | Select and approve launch articles | One article draft exists in the Markdown pipeline; Julia's editorial approval is still needed | Review pending |
-| D6 | Approve reuse of existing text, photos, and media | Julia supplied profile copy and five existing photos; image rights still need confirmation | Open |
+| D6 | Approve reuse of existing text, photos, and media | Julia requested use of the five existing profile photos; they are optimized and served locally | Resolved |
 
 ## File change summary
 
@@ -337,7 +337,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 - Implemented: SvelteKit/Tailwind project configuration, prerendered routes, shared shell, tool directory, Markdown article pipeline, sitemap/robots, social metadata, validation workflow, and static `CNAME`.
 - Implemented: versioned questionnaire content, pure scoring module, and scoring tests.
-- Pending: legal fact confirmation and review, article approval, image-rights confirmation, full accessibility/device review, clean-install verification, Pages migration/release decision, and production verification.
+- Pending: legal fact confirmation and review, article approval, any applicable image-license review, full accessibility/device review, clean-install verification, Pages migration/release decision, and production verification.
 
 ## Reference map
 
@@ -357,7 +357,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 | Questionnaire | Averages, dimension order, missing/duplicate/unknown answers, invalid scale values, non-classifying copy tested |
 | Components | Type/a11y diagnostics pass; manual keyboard, screen-reader, focus, and responsive checks remain |
 | Routes/content | All 9 prerendered HTML routes, sitemap, robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
-| Privacy | Browser flow and source confirm no answer submission or persistence; hosting docs were researched, but log retention/transfer details remain unverified |
+| Privacy | Browser flow and source confirm no answer submission or persistence; GitHub's published transfer disclosures are described, but Pages log-retention and DPA applicability remain unverified |
 | Accessibility | Automated scan plus keyboard, screen-reader, zoom, contrast, and reduced-motion review |
 | Deployment | `CNAME`, HTTPS, custom domain, all routes, not-found handling, sitemap/robots |
 

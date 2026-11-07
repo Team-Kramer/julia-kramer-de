@@ -9,9 +9,10 @@
 	<div class="legal-notice">
 		<strong>Entwurf – noch nicht veröffentlichen.</strong>
 		<p>
-			Vor Veröffentlichung bitte prüfen, ob eine Datenschutzbeauftragte oder ein
-			Datenschutzbeauftragter bestellt ist, sowie GitHubs konkrete Speicherfristen und etwaige
-			Drittlandübermittlungen. Diese Seite ist eine sachbezogene Arbeitsfassung, keine Rechtsberatung.
+			Offen sind noch die konkrete Speicherfrist der GitHub-Pages-Zugriffsprotokolle, die
+			Anwendbarkeit der GitHub-DPA auf diese Protokolle und die Frage, ob eine
+			Datenschutzbeauftragte oder ein Datenschutzbeauftragter bestellt ist. Diese Seite ist eine
+			sachbezogene Arbeitsfassung, keine Rechtsberatung.
 		</p>
 	</div>
 	<div class="prose">
@@ -24,22 +25,59 @@
 			E-Mail: <a href="mailto:info@julia-kramer.de">info@julia-kramer.de</a>
 		</p>
 
-		<h2>Besuch dieser Website und Hosting</h2>
+		<h2>Hosting über GitHub</h2>
 		<p>
-			Diese Website wird als statische Website über GitHub Pages bereitgestellt. Laut der
-			GitHub-Dokumentation wird bei einem Aufruf einer GitHub-Pages-Website die IP-Adresse der
-			besuchenden Person aus Sicherheitsgründen protokolliert und gespeichert. GitHub beschreibt
-			seine Verarbeitung in der
-			<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">
+			Diese Website wird als statische Website über GitHub Pages bereitgestellt; die zugehörigen
+			Repositories werden ebenfalls bei GitHub gehostet. Bei einem Aufruf einer GitHub-Pages-Website
+			wird die IP-Adresse der besuchenden Person laut GitHub aus Sicherheitsgründen protokolliert und
+			gespeichert. GitHub, Inc. hat seinen Sitz in 88 Colin P. Kelly Jr. Street, San Francisco,
+			CA 94107, USA und gehört zur Microsoft-Unternehmensgruppe.
+		</p>
+		<p>
+			GitHub gibt an, personenbezogene Daten an verschiedenen Orten zu speichern und zu verarbeiten,
+			darunter in der jeweiligen lokalen Region, in den USA und in weiteren Ländern, in denen GitHub,
+			verbundene Unternehmen oder Unterauftragsverarbeiter tätig sind. Eine überwiegende Speicherung
+			in den USA lässt sich daraus für diese Website nicht ableiten. GitHub beschreibt seine
+			Verarbeitung in der
+			<a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noreferrer">
 				GitHub Privacy Statement
 			</a>.
-			Die dort zugänglichen GitHub-Pages-Angaben nennen keine konkrete Speicherfrist für diese
-			Zugriffsprotokolle. Die konkrete Frist und die für GitHub-Pages geltenden
-			Übermittlungsbedingungen sind vor Veröffentlichung beim Anbieter zu prüfen.
 		</p>
 		<p>
 			Die Website selbst setzt keine Analyse- oder Marketingdienste ein. Sie lädt keine externen
 			Schriftarten.
+		</p>
+
+		<h2>Drittlandübermittlungen und Unterauftragsverarbeiter</h2>
+		<p>
+			GitHub erklärt, bei Übermittlungen aus der EU in Länder ohne Angemessenheitsbeschluss im
+			Allgemeinen die Standardvertragsklauseln (SCCs) der Europäischen Kommission gemäß
+			Durchführungsbeschluss (EU) 2021/914 heranzuziehen. Die GitHub Data Protection Agreement (DPA)
+			enthält ebenfalls SCCs für die von ihr erfassten Verarbeitungen. Ob die DPA und diese
+			Transferregelungen auch für Zugriffsprotokolle beim Besuch dieser GitHub-Pages-Website gelten,
+			lässt sich aus den veröffentlichten Unterlagen allein nicht feststellen.
+		</p>
+		<p>
+			GitHub veröffentlicht eine Liste von Unterauftragsverarbeitern. Darin sind unter anderem AWS,
+			Microsoft Azure, Google Cloud Platform, Cloudflare und Fastly aufgeführt. GitHub weist darauf
+			hin, dass diese Liste für Dienste gilt, die von der DPA erfasst werden; daraus folgt nicht,
+			dass jeder dieser Anbieter Daten dieser Website verarbeitet. Die jeweils aktuelle Liste und
+			ihren Geltungsbereich findest du in den
+			<a href="https://docs.github.com/en/site-policy/privacy-policies/github-subprocessors" rel="noreferrer">
+				GitHub Subprocessors
+			</a>.
+		</p>
+
+		<h2>US-amerikanische Rechtslage</h2>
+		<p>
+			Als US-amerikanisches Unternehmen kann GitHub US-amerikanischem Recht unterliegen. Der CLOUD
+			Act, insbesondere 18 U.S.C. § 2713, sieht vor, dass ein Anbieter unter den gesetzlichen
+			Voraussetzungen Informationen in seinem Besitz, Gewahrsam oder unter seiner Kontrolle
+			bereitstellen muss – unabhängig davon, ob diese innerhalb oder außerhalb der USA gespeichert
+			sind. Das bedeutet keinen pauschalen oder jederzeitigen Zugriff durch Behörden. Allein aus dem
+			Speicherort lässt sich jedoch keine uneingeschränkte Garantie eines mit der EU vergleichbaren
+			Schutzniveaus ableiten. Maßgeblich sind der konkrete Dienst, die einschlägigen Vertrags- und
+			Transferregelungen sowie die gesetzlichen Voraussetzungen eines möglichen Ersuchens.
 		</p>
 
 		<h2>Mental-Load-Check</h2>
@@ -59,17 +97,17 @@
 
 		<h2>Empfänger und mögliche Übermittlung</h2>
 		<p>
-			Technische Verbindungsdaten werden bei GitHub Pages verarbeitet. GitHub veröffentlicht
-			Informationen zu seinen Gesellschaften, Verarbeitungsorten und Übermittlungen in seiner
-			Datenschutzerklärung. Die konkret einschlägige GitHub-Gesellschaft und etwaige Garantien für
-			Übermittlungen außerhalb des Europäischen Wirtschaftsraums sind noch zu verifizieren.
+			GitHub Pages verarbeitet die technischen Verbindungsdaten. Je nach anwendbaren
+			Vertragsbedingungen können auch verbundene Unternehmen oder Unterauftragsverarbeiter beteiligt
+			sein. Welche GitHub-Gesellschaft und welche Vertragsbedingungen konkret für
+			GitHub-Pages-Zugriffsprotokolle gelten, ist noch zu klären.
 		</p>
 
 		<h2>Speicherdauer</h2>
 		<p>
 			Die Anwendung speichert keine Mental-Load-Check-Antworten. GitHub nennt in der verlinkten
 			GitHub-Pages-Dokumentation keine konkrete Aufbewahrungsdauer für sicherheitsbezogene
-			IP-Protokolle. Es wird daher hier keine unbestätigte Frist angegeben.
+			IP-Protokolle. Es wird daher keine unbestätigte Frist angegeben.
 		</p>
 
 		<h2>Deine Rechte</h2>
@@ -94,6 +132,11 @@
 				</a>
 			</li>
 			<li>
+				<a href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj" rel="noreferrer">
+					Durchführungsbeschluss (EU) 2021/914 zu den Standardvertragsklauseln
+				</a>
+			</li>
+			<li>
 				<a href="https://www.gesetze-im-internet.de/ttdsg/__25.html" rel="noreferrer">
 					§ 25 Telekommunikation-Digitale-Dienste-Datenschutz-Gesetz
 				</a>
@@ -104,8 +147,18 @@
 				</a>
 			</li>
 			<li>
-				<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">
+				<a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" rel="noreferrer">
 					GitHub Privacy Statement
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/customer-terms/github-data-protection-agreement" rel="noreferrer">
+					GitHub Data Protection Agreement (DPA)
+				</a>
+			</li>
+			<li>
+				<a href="https://www.law.cornell.edu/uscode/text/18/2713" rel="noreferrer">
+					18 U.S.C. § 2713 (CLOUD Act)
 				</a>
 			</li>
 		</ul>
