@@ -40,24 +40,24 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0. Decisions | In progress | Julia approved the copy and confirmed the About-page photos are private images; qualified GitHub disclosures are accepted for v1. Production deployment and verification remain |
-| 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, and validation CI are in place; GitHub Actions production deployment is being prepared |
+| 0. Decisions | Complete | Julia approved the copy, confirmed the About-page photos are private images, accepted the qualified GitHub disclosures for v1, and approved production deployment |
+| 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, validation CI, and GitHub Actions production deployment are in place |
 | 2. Tool model and scoring | Complete | Versioned question data, guarded scoring, and unit tests implemented |
 | 3. Shared UI and navigation | In progress | Shared responsive shell and accessible controls implemented; manual assistive-technology review remains |
 | 4. Core pages and tool discovery | Complete | Core routes and legal pages are built; both legal pages are indexable and in the sitemap; Julia approved the copy |
 | 5. Mental-Load-Check | In progress | Client-side flow passes end-to-end browser checks; manual accessibility and device QA remain |
 | 6. Denklabor and editorial foundation | Complete | Validated Markdown pipeline, static article routes, and category filters are implemented; Julia approved the copy |
-| 7. Quality, legal, SEO, and launch | In progress | Build, route smoke tests, sitemap, robots, and hosting research are complete; legal, accessibility, and release gates remain |
+| 7. Quality, legal, SEO, and launch | In progress | Production deployment and route/indexing checks are complete; manual accessibility and performance review remain |
 
 ## Current state
 
-- The target repository is `/Users/kram030/git/julia-kramer-de`, on branch `feature/mental-load`, with origin `Team-Kramer/julia-kramer-de`.
+- The target repository is `/Users/kram030/git/julia-kramer-de`, deployed from `main` at merge commit `2121c83`, with origin `Team-Kramer/julia-kramer-de`.
 - The original root-level Solo export (`index.html`, `assets/`, `images/`, `img/`) is still preserved and untouched. It is not copied into the SvelteKit build output.
 - A SvelteKit + TypeScript + Tailwind v4 static app now lives in the repository root. All implemented routes prerender, and `static/CNAME` carries `julia-kramer.de` into `build/`.
 - The existing prototype under `docs/julia-mental-load/src/` remains untouched. The production app implementation is in the root `src/`; decide later whether the docs prototype should be archived or removed after review.
 - `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested.
-- GitHub Pages currently serves the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. Julia approved switching to a GitHub Actions build of the new static site; the deployment workflow is being added.
-- Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, and `pnpm build`; production-preview checks cover prerendered routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
+- GitHub Pages serves the new static build through GitHub Actions on `main`, retaining `julia-kramer.de` and enforced HTTPS. The previous root export remains available in repository history for rollback.
+- The production workflow passed `pnpm check`, 11 unit tests, and `pnpm build`. Live smoke tests returned HTTP 200 for all 9 sitemap URLs, both legal pages, `robots.txt`, and the sitemap; an unknown route returned 404. Browser verification at 390px found no horizontal overflow or page errors.
 - Julia approved the supplied site copy and confirmed the About-page photos are private images. The Impressum includes the supplied contact and editorial responsibility details. Impressum and Datenschutz are indexable and listed in the sitemap; Datenschutz distinguishes GitHub's published disclosures from unresolved Pages log-retention and DPA-applicability details, which Julia accepts for v1.
 
 ## Feature inventory
@@ -277,7 +277,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Confirm the hosting platform and available documentation about request logs, international transfers, and third-party resources; the published privacy notice describes GitHub's disclosures and qualifies the unresolved log-retention and DPA-applicability details, accepted by Julia for v1.
 - [x] Ensure the questionnaire makes no external requests containing answer data.
 - [x] Keep analytics, cookies, external form processors, and newsletter providers out of v1; disclose new services before adding them.
-- [ ] Verify Impressum and Datenschutz against the live site's hosting and contact details after deployment.
+- [x] Verify Impressum and Datenschutz against the live site's hosting and contact details after deployment.
 
 ### 7c. SEO and discoverability
 
@@ -285,15 +285,15 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Open Graph metadata with an approved image or a safe text-only fallback.
 - [x] Generate a sitemap and robots file for public static routes; include both indexable legal pages in the sitemap.
 - [ ] Add structured data only where accurate (for example, `Person` and `Article`); do not add product or medical claims.
-- [x] Verify internal links, custom domain output, HTTPS configuration, sitemap/robots, and not-found behavior in the production preview; live deployment remains pending.
+- [x] Verify live routes, custom domain, HTTPS configuration, sitemap/robots, and not-found behavior in production.
 
 ### 7d. Performance and deployment
 
-- [x] Production build and static preview succeed; clean-install verification remains.
+- [x] Production build, clean install, and static GitHub Pages deployment succeed.
 - [ ] Avoid shipping unused legacy assets or large dependencies; optimize any approved images.
 - [ ] Check mobile and desktop rendering, largest-contentful paint, layout stability, and the check's initial interaction readiness.
-- [ ] Deploy to a preview/staging target first if the host supports it; confirm the custom domain and `CNAME` survive deployment.
-- [ ] Verify the production site and all routes after deployment; retain a rollback copy of the previous static export until acceptance.
+- [x] No staging target was configured for the existing GitHub Pages site; Julia approved production deployment after CI passed, and the custom domain and `CNAME` were verified.
+- [x] Verify the production site and all sitemap routes after deployment; the previous static export remains in repository history for rollback.
 
 ### 7e. Content and tone review
 
@@ -353,10 +353,10 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 | Area | Verification |
 |---|---|
-| Static build | `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and local preview smoke tests passed; clean install remains |
+| Static build | GitHub Actions clean install, `pnpm check`, 11 unit tests, and `pnpm build` passed |
 | Questionnaire | Averages, dimension order, missing/duplicate/unknown answers, invalid scale values, non-classifying copy tested |
 | Components | Type/a11y diagnostics pass; manual keyboard, screen-reader, focus, and responsive checks remain |
-| Routes/content | Prerendered HTML routes, sitemap (including indexable Impressum and Datenschutz), robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
+| Routes/content | All 9 sitemap URLs, robots, and sitemap return HTTP 200 in production; unknown routes return 404; Julia approved the copy |
 | Privacy | Browser flow and source confirm no answer submission or persistence; GitHub's published transfer disclosures are described, but Pages log-retention and DPA applicability remain unverified |
 | Accessibility | Automated scan plus keyboard, screen-reader, zoom, contrast, and reduced-motion review |
 | Deployment | `CNAME`, HTTPS, custom domain, all routes, not-found handling, sitemap/robots |
@@ -367,6 +367,6 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Visitors can find the tools, Denklabor, About, and optional support without a sales funnel.
 - [ ] The 15-question check works end-to-end on mobile and desktop, computes three understandable summaries, and can be restarted.
 - [x] No answers are submitted or persisted by the site in v1; the privacy explanation matches the implementation.
-- [x] The site statically builds and preserves the custom domain in its output; live deployment remains pending.
+- [x] The site statically builds, preserves the custom domain in its output, and is live over HTTPS.
 - [x] Blog and tool content are structured for future reuse without building SaaS/API infrastructure now.
 - [ ] Accessibility, legal, privacy, SEO, and production deployment checks are complete before launch.
