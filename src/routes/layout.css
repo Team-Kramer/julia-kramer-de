@@ -602,6 +602,67 @@ p {
 	padding-block: clamp(3.5rem, 8vw, 6.5rem);
 }
 
+.content-page.profile-page {
+	width: min(68rem, calc(100% - 3rem));
+}
+
+.profile-page > h1 {
+	max-width: 20ch;
+	margin-bottom: 1.25rem;
+}
+
+.profile-page .content-lede {
+	max-width: 48rem;
+	margin-bottom: 0;
+}
+
+.profile-sections {
+	display: grid;
+	gap: clamp(3rem, 7vw, 6rem);
+	margin-top: clamp(3rem, 7vw, 5.5rem);
+}
+
+.profile-section {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.9fr);
+	align-items: center;
+	gap: clamp(2rem, 5vw, 4.5rem);
+	max-width: none;
+}
+
+.profile-section:nth-child(even) .profile-photo {
+	order: -1;
+}
+
+.profile-section h2 {
+	margin-top: 0;
+}
+
+.profile-section p:last-child {
+	margin-bottom: 0;
+}
+
+.profile-photo {
+	overflow: hidden;
+	margin: 0;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-xl);
+	background: var(--color-bg-subtle);
+}
+
+.profile-photo img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+.profile-section-no-photo {
+	display: block;
+	max-width: 48rem;
+	margin-inline: auto;
+}
+
 .content-page .eyebrow,
 .tool-page .eyebrow {
 	margin-bottom: 0.8rem;
@@ -1157,6 +1218,19 @@ p {
 	.tool-page {
 		width: min(100% - 2rem, 52rem);
 		padding-block: 3.25rem;
+	}
+
+	.content-page.profile-page {
+		width: min(100% - 2rem, 68rem);
+	}
+
+	.profile-section {
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+	}
+
+	.profile-section:nth-child(even) .profile-photo {
+		order: 0;
 	}
 
 	.tool-panel {

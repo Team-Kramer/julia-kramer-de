@@ -55,10 +55,10 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 - The original root-level Solo export (`index.html`, `assets/`, `images/`, `img/`) is still preserved and untouched. It is not copied into the SvelteKit build output.
 - A SvelteKit + TypeScript + Tailwind v4 static app now lives in the repository root. All implemented routes prerender, and `static/CNAME` carries `julia-kramer.de` into `build/`.
 - The existing prototype under `docs/julia-mental-load/src/` remains untouched. The production app implementation is in the root `src/`; decide later whether the docs prototype should be archived or removed after review.
-- `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. Existing photos were not reused because their rights and fit have not been verified.
+- `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. The About page uses Julia's supplied profile copy and optimized local versions of the referenced legacy images; image-use rights still need confirmation.
 - GitHub Pages is confirmed as the host, configured for the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. A validation-only GitHub Actions workflow was added; deployment configuration was deliberately not changed.
 - Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and production-preview checks for all 9 prerendered HTML routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
-- About Julia now draws on the existing master profile. The Impressum includes the supplied contact and editorial responsibility details; the noindex Datenschutz draft still flags unresolved hosting/transfer details and the DPO status.
+- The About page uses Julia's newly supplied profile copy and optimized local versions of the referenced legacy images; image-use rights still need confirmation. The Impressum includes the supplied contact and editorial responsibility details; the noindex Datenschutz draft still flags unresolved hosting/transfer details and the DPO status.
 
 ## Feature inventory
 
@@ -137,7 +137,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### D2 — Preserve or replace current homepage
 
-**Implementation choice:** Build the Labor site as a separate SvelteKit static output and preserve the root-level Solo export as a rollback until the new deployment and content migration are reviewed. Keep `CNAME`; reuse no legacy media until rights and fit are confirmed.
+**Implementation choice:** Build the Labor site as a separate SvelteKit static output and preserve the root-level Solo export as a rollback until the new deployment and content migration are reviewed. Keep `CNAME`; use only explicitly selected local assets, and confirm image rights before release.
 
 **Owner:** Product / Content. **Status:** ✅ Preservation approach chosen; migration/launch approval pending.
 
@@ -155,15 +155,15 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### D5 — Blog authoring
 
-**Recommendation:** store articles as local Markdown/content files and prerender them. No CMS is needed for v1. Confirm ownership and editorial cadence before writing placeholder articles as if they were published content.
+**Recommendation:** store articles as local Markdown/content files and prerender them. No CMS is needed for v1. Confirm editorial approval before presenting a draft article as published content.
 
-**Owner:** Content / Frontend. **Status:** ⬜ Open — initial article is a static route; a reusable Markdown pipeline is not built.
+**Owner:** Content / Frontend. **Status:** ⬜ Open — Markdown pipeline is implemented; the initial article still needs editorial approval.
 
 ### D6 — Existing media and brand assets
 
-**Recommendation:** inventory the current image assets, confirm usage rights and relevance, and prefer no image over an unrelated or unlicensed stock photo. Use `design.md` tokens as the primary visual identity; avoid importing assets or effects from the other family sites without an explicit decision.
+**Recommendation:** confirm usage rights and relevance for the five profile images supplied with Julia's copy. They are stored as optimized local assets; do not add other legacy media or assets from the other family sites without review.
 
-**Owner:** Design / Product. **Status:** ⬜ Open — legacy media has not been reused; rights inventory is still needed before selecting any asset.
+**Owner:** Design / Product. **Status:** ⬜ Open — the supplied profile images are selected and optimized; rights confirmation is still needed before release.
 
 ## Phase 1 — Static foundation and design tokens
 *Depends on: D1 and D2.*
@@ -218,7 +218,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 - [x] Build `/` with the hero headline **“Mental Load reduzieren – mit System statt Schuldgefühlen”**, a short approach, tool/article entry points, and a low-pressure support link.
 - [x] Build `/werkzeuge` with the Mental-Load-Check first and an accurate status for each planned tool.
-- [x] Build `/ueber` around the approach and principles “Systeme > Motivation” and “Klarheit > Optimierung”, using details from the existing master profile; Julia's final editorial approval remains.
+- [x] Build `/ueber` using Julia's supplied profile copy and image references; confirm image-use rights before release.
 - [x] Build `/begleitung` as a brief, factual, non-sales invitation; no pricing, urgency, booking, or unsupported outcomes.
 - [x] Add unique page titles/descriptions and social preview metadata to public routes; legal drafts are explicitly `noindex`.
 - [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice remains a noindex draft pending hosting/transfer details and DPO status.
@@ -320,7 +320,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 | D3 | Decide whether v1 has contact, newsletter, or result-sharing | No signup, newsletter, answer sharing, or booking/contact flow in v1 | Resolved for prototype |
 | D4 | Approve result interpretation and copy | Averages plus contextual descriptions only; no thresholds or diagnosis | Review pending |
 | D5 | Select and approve launch articles | One article draft exists in the Markdown pipeline; Julia's editorial approval is still needed | Review pending |
-| D6 | Approve reuse of existing text, photos, and media | No legacy assets used; confirm rights before migration | Open |
+| D6 | Approve reuse of existing text, photos, and media | Julia supplied profile copy and five existing photos; image rights still need confirmation | Open |
 
 ## File change summary
 
@@ -337,7 +337,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 - Implemented: SvelteKit/Tailwind project configuration, prerendered routes, shared shell, tool directory, Markdown article pipeline, sitemap/robots, social metadata, validation workflow, and static `CNAME`.
 - Implemented: versioned questionnaire content, pure scoring module, and scoring tests.
-- Pending: legal fact confirmation and review, article/bio approval, full accessibility/device review, clean-install verification, Pages migration/release decision, and production verification.
+- Pending: legal fact confirmation and review, article approval, image-rights confirmation, full accessibility/device review, clean-install verification, Pages migration/release decision, and production verification.
 
 ## Reference map
 
