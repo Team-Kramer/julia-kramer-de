@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://julia-kramer.de/sitemap.xml
