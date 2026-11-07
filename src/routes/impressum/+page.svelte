@@ -1,6 +1,10 @@
 <svelte:head>
 	<title>Impressum – Julia Kramer</title>
-	<meta name="robots" content="noindex, nofollow" />
+	<meta
+		name="description"
+		content="Impressum von julia-kramer.de mit Angaben zum Anbieter und zur redaktionellen Verantwortung."
+	/>
+	<link rel="canonical" href="https://julia-kramer.de/impressum/" />
 </svelte:head>
 
 <article class="content-page">

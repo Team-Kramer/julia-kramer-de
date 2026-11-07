@@ -108,7 +108,7 @@ Teasers must identify planned tools as planned; do not present non-functional ca
 - [x] One initial `/blog/[slug]` article is statically rendered with long-form typography and a relevant tool link; a general content pipeline remains.
 - [x] `/ueber` — approach and motivation; systems over motivation, clarity over optimization. Approved biographical details remain to be added.
 - [x] `/begleitung` — calm description of optional support; it does not pretend a contact or booking flow is available.
-- [ ] `/impressum` and `/datenschutz` routes exist as non-publishable placeholders; complete and review legal copy before launch.
+- [x] `/impressum` and `/datenschutz` contain the supplied provider/editorial contact details and GitHub hosting disclosures; both routes are indexable and included in the sitemap. Final legal review and confirmation of live hosting details remain launch gates.
 - [x] Shared header/navigation and footer, with current-page state in the main navigation.
 
 ### E. Experience principles
@@ -356,7 +356,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 | Static build | `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and local preview smoke tests passed; clean install remains |
 | Questionnaire | Averages, dimension order, missing/duplicate/unknown answers, invalid scale values, non-classifying copy tested |
 | Components | Type/a11y diagnostics pass; manual keyboard, screen-reader, focus, and responsive checks remain |
-| Routes/content | Prerendered HTML routes, sitemap (including indexable Datenschutz), robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
+| Routes/content | Prerendered HTML routes, sitemap (including indexable Impressum and Datenschutz), robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
 | Privacy | Browser flow and source confirm no answer submission or persistence; GitHub's published transfer disclosures are described, but Pages log-retention and DPA applicability remain unverified |
 | Accessibility | Automated scan plus keyboard, screen-reader, zoom, contrast, and reduced-motion review |
 | Deployment | `CNAME`, HTTPS, custom domain, all routes, not-found handling, sitemap/robots |
