@@ -40,11 +40,11 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0. Decisions | In progress | GitHub Pages is confirmed as the host; GitHub log/DPA scope, DPO status, and editorial approvals remain open |
+| 0. Decisions | In progress | GitHub Pages is confirmed as the host and its published disclosures are documented; Pages log retention, DPA applicability to visitor logs, the operator's DPO status, and editorial approvals remain open |
 | 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, and validation CI are in place; deployment remains intentionally unchanged |
 | 2. Tool model and scoring | Complete | Versioned question data, guarded scoring, and unit tests implemented |
 | 3. Shared UI and navigation | In progress | Shared responsive shell and accessible controls implemented; manual assistive-technology review remains |
-| 4. Core pages and tool discovery | In progress | Core routes, route metadata, and legal working drafts are built; editorial and legal review remain |
+| 4. Core pages and tool discovery | In progress | Core routes and legal pages are built; the privacy route is indexable and included in the sitemap; editorial and legal review remain |
 | 5. Mental-Load-Check | In progress | Client-side flow passes end-to-end browser checks; manual accessibility and device QA remain |
 | 6. Denklabor and editorial foundation | In progress | Validated Markdown pipeline, static article routes, and category filters are implemented; article approval remains |
 | 7. Quality, legal, SEO, and launch | In progress | Build, route smoke tests, sitemap, robots, and hosting research are complete; legal, accessibility, and release gates remain |
@@ -57,8 +57,8 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 - The existing prototype under `docs/julia-mental-load/src/` remains untouched. The production app implementation is in the root `src/`; decide later whether the docs prototype should be archived or removed after review.
 - `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested.
 - GitHub Pages is confirmed as the host, configured for the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. A validation-only GitHub Actions workflow was added; deployment configuration was deliberately not changed.
-- Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and production-preview checks for all 9 prerendered HTML routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
-- The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested. The Impressum includes the supplied contact and editorial responsibility details; the noindex Datenschutz draft describes GitHub's published transfer disclosures and flags unresolved log retention, DPA scope, and DPO status.
+- Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, and `pnpm build`; production-preview checks cover prerendered routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
+- The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested. The Impressum includes the supplied contact and editorial responsibility details. Datenschutz is indexable and listed in the sitemap; it describes GitHub's published disclosures and distinguishes them from unresolved Pages log-retention and DPA-applicability details.
 
 ## Feature inventory
 
@@ -220,8 +220,8 @@ Resolve these before committing to the site rewrite. Recommendations are default
 - [x] Build `/werkzeuge` with the Mental-Load-Check first and an accurate status for each planned tool.
 - [x] Build `/ueber` using Julia's supplied profile copy and image references; confirm image-use rights before release.
 - [x] Build `/begleitung` as a brief, factual, non-sales invitation; no pricing, urgency, booking, or unsupported outcomes.
-- [x] Add unique page titles/descriptions and social preview metadata to public routes; legal drafts are explicitly `noindex`.
-- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice remains a noindex draft pending exact GitHub Pages log-retention/DPA-scope details, DPO status, and final review.
+- [x] Add unique page titles/descriptions and social preview metadata to public routes; Datenschutz has a canonical URL and is indexable.
+- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice documents GitHub's published details, while exact GitHub Pages log-retention/DPA applicability and final legal review remain open.
 
 **Done when:** all core pages prerender, navigation is coherent, and the visitor can reach the first working tool from home and the tool directory.
 
@@ -274,7 +274,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### 7b. Privacy and legal
 
-- [x] Confirm the hosting platform and available documentation about request logs, international transfers, and third-party resources; the privacy draft describes GitHub's published disclosures and flags unresolved log-retention and DPA-scope details.
+- [x] Confirm the hosting platform and available documentation about request logs, international transfers, and third-party resources; the published privacy notice describes GitHub's disclosures and qualifies the unresolved log-retention and DPA-applicability details.
 - [x] Ensure the questionnaire makes no external requests containing answer data.
 - [ ] Do not add analytics, cookies, external form processors, or newsletter providers without an explicit decision, consent review where applicable, and matching disclosures.
 - [ ] Verify Impressum and Datenschutz reflect the live site and current contact/hosting details before release.
@@ -283,7 +283,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 - [x] German locale and meaningful page titles/descriptions; no duplicate titles or missing canonical URLs.
 - [x] Open Graph metadata with an approved image or a safe text-only fallback.
-- [x] Generate a sitemap and robots file for public static routes.
+- [x] Generate a sitemap and robots file for public static routes; include the indexable Datenschutz route in the sitemap.
 - [ ] Add structured data only where accurate (for example, `Person` and `Article`); do not add product or medical claims.
 - [x] Verify internal links, custom domain output, HTTPS configuration, sitemap/robots, and not-found behavior in the production preview; live deployment remains pending.
 
@@ -356,7 +356,7 @@ Resolve these before committing to the site rewrite. Recommendations are default
 | Static build | `pnpm check` (0 errors/warnings), 11 unit tests, `pnpm build`, and local preview smoke tests passed; clean install remains |
 | Questionnaire | Averages, dimension order, missing/duplicate/unknown answers, invalid scale values, non-classifying copy tested |
 | Components | Type/a11y diagnostics pass; manual keyboard, screen-reader, focus, and responsive checks remain |
-| Routes/content | All 9 prerendered HTML routes, sitemap, robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
+| Routes/content | Prerendered HTML routes, sitemap (including indexable Datenschutz), robots, and `CNAME` return HTTP 200; unknown routes return 404; editorial approval remains |
 | Privacy | Browser flow and source confirm no answer submission or persistence; GitHub's published transfer disclosures are described, but Pages log-retention and DPA applicability remain unverified |
 | Accessibility | Automated scan plus keyboard, screen-reader, zoom, contrast, and reduced-motion review |
 | Deployment | `CNAME`, HTTPS, custom domain, all routes, not-found handling, sitemap/robots |

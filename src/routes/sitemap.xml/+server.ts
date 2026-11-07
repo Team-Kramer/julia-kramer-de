@@ -8,7 +8,8 @@ const publicRoutes = [
 	'/werkzeuge/mental-load-check/',
 	'/blog/',
 	'/ueber/',
-	'/begleitung/'
+	'/begleitung/',
+	'/datenschutz/'
 ];
 
 function escapeXml(value: string): string {

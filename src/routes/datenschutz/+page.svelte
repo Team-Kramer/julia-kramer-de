@@ -1,20 +1,15 @@
 <svelte:head>
 	<title>Datenschutz – Julia Kramer</title>
-	<meta name="robots" content="noindex, nofollow" />
+	<meta
+		name="description"
+		content="Datenschutzhinweise zur Website julia-kramer.de, zum GitHub-Pages-Hosting und zum Mental-Load-Check."
+	/>
+	<link rel="canonical" href="https://julia-kramer.de/datenschutz/" />
 </svelte:head>
 
 <article class="content-page">
 	<p class="eyebrow">RECHTLICHES</p>
 	<h1>Datenschutz</h1>
-	<div class="legal-notice">
-		<strong>Entwurf – noch nicht veröffentlichen.</strong>
-		<p>
-			Offen sind noch die konkrete Speicherfrist der GitHub-Pages-Zugriffsprotokolle, die
-			Anwendbarkeit der GitHub-DPA auf diese Protokolle und die Frage, ob eine
-			Datenschutzbeauftragte oder ein Datenschutzbeauftragter bestellt ist. Diese Seite ist eine
-			sachbezogene Arbeitsfassung, keine Rechtsberatung.
-		</p>
-	</div>
 	<div class="prose">
 		<h2>Verantwortlicher</h2>
 		<p>
@@ -52,10 +47,12 @@
 		<p>
 			GitHub erklärt, bei Übermittlungen aus der EU in Länder ohne Angemessenheitsbeschluss im
 			Allgemeinen die Standardvertragsklauseln (SCCs) der Europäischen Kommission gemäß
-			Durchführungsbeschluss (EU) 2021/914 heranzuziehen. Die GitHub Data Protection Agreement (DPA)
-			enthält ebenfalls SCCs für die von ihr erfassten Verarbeitungen. Ob die DPA und diese
-			Transferregelungen auch für Zugriffsprotokolle beim Besuch dieser GitHub-Pages-Website gelten,
-			lässt sich aus den veröffentlichten Unterlagen allein nicht feststellen.
+			Durchführungsbeschluss (EU) 2021/914 heranzuziehen. GitHub veröffentlicht außerdem eine Data
+			Protection Agreement (DPA), die nach ihrem Wortlaut Bestandteil des GitHub Customer Agreement
+			ist und für erfasste Online-Dienste gilt. Welche Vertragsbedingungen und Transferregelungen
+			konkret für Zugriffsprotokolle dieser GitHub-Pages-Website gelten, lässt sich aus den
+			öffentlichen Angaben nicht eindeutig ableiten. Deshalb wird weder behauptet, die DPA gelte
+			sicher für diese Protokolle, noch, sie sei für alle Standardkonten ausgeschlossen.
 		</p>
 		<p>
 			GitHub veröffentlicht eine Liste von Unterauftragsverarbeitern. Darin sind unter anderem AWS,
@@ -80,6 +77,21 @@
 			Transferregelungen sowie die gesetzlichen Voraussetzungen eines möglichen Ersuchens.
 		</p>
 
+		<h2>GitHub-Pages-Zugriffsprotokolle</h2>
+		<p>
+			GitHub erklärt, beim Aufruf einer GitHub-Pages-Website die IP-Adresse der Besuchenden zu
+			Sicherheitszwecken zu protokollieren und zu speichern. Eine konkrete Aufbewahrungs- oder
+			Löschfrist für diese Pages-Zugriffsprotokolle veröffentlicht GitHub in den verlinkten
+			Informationen nicht.
+		</p>
+
+		<h2>Datenschutzkontakt bei GitHub</h2>
+		<p>
+			GitHub nennt <a href="mailto:dpo@github.com">dpo@github.com</a> als Kontakt zum eigenen
+			Datenschutzbeauftragten. Als Anschrift in der Europäischen Union führt GitHub B.V.,
+			Prins Bernhardplein 200, 1097 JB Amsterdam, Niederlande, auf.
+		</p>
+
 		<h2>Mental-Load-Check</h2>
 		<p>
 			Die Antworten werden ausschließlich im Arbeitsspeicher deines Browsers verarbeitet. Sie werden
@@ -89,33 +101,36 @@
 
 		<h2>Zweck und Rechtsgrundlage</h2>
 		<p>
-			Die Bereitstellung der Website und die Abwehr technischer Angriffe dienen dem berechtigten
-			Interesse an einem sicheren und funktionsfähigen Online-Angebot. Soweit personenbezogene Daten
-			durch den Hostinganbieter verarbeitet werden, sind die konkrete Rechtsgrundlage und
-			Verantwortungsverteilung noch zu prüfen.
+			Die Bereitstellung der Website und die Abwehr technischer Angriffe dienen dem Interesse an
+			einem sicheren und funktionsfähigen Online-Angebot. Als Rechtsgrundlage für die hierfür
+			erforderliche Verarbeitung kommt insbesondere Art. 6 Abs. 1 lit. f DSGVO in Betracht. GitHub
+			beschreibt in seiner Datenschutzerklärung außerdem Verarbeitungen, für die GitHub selbst
+			Verantwortlicher ist.
 		</p>
 
 		<h2>Empfänger und mögliche Übermittlung</h2>
 		<p>
-			GitHub Pages verarbeitet die technischen Verbindungsdaten. Je nach anwendbaren
-			Vertragsbedingungen können auch verbundene Unternehmen oder Unterauftragsverarbeiter beteiligt
-			sein. Welche GitHub-Gesellschaft und welche Vertragsbedingungen konkret für
-			GitHub-Pages-Zugriffsprotokolle gelten, ist noch zu klären.
+			GitHub Pages verarbeitet die technischen Verbindungsdaten. Je nach Dienst und anwendbaren
+			Vertragsbedingungen können verbundene Unternehmen oder Unterauftragsverarbeiter beteiligt
+			sein. Die von GitHub veröffentlichte Subprozessorliste bezieht sich auf Dienste, die der DPA
+			unterliegen; sie belegt nicht, dass jeder dort genannte Anbieter Daten dieser Website erhält.
 		</p>
 
 		<h2>Speicherdauer</h2>
 		<p>
-			Die Anwendung speichert keine Mental-Load-Check-Antworten. GitHub nennt in der verlinkten
-			GitHub-Pages-Dokumentation keine konkrete Aufbewahrungsdauer für sicherheitsbezogene
-			IP-Protokolle. Es wird daher keine unbestätigte Frist angegeben.
+			Die Anwendung speichert keine Mental-Load-Check-Antworten. Für die sicherheitsbezogenen
+			GitHub-Pages-IP-Protokolle veröffentlicht GitHub keine konkrete Aufbewahrungsdauer.
 		</p>
 
 		<h2>Deine Rechte</h2>
 		<p>
 			Im Rahmen der gesetzlichen Voraussetzungen hast du insbesondere das Recht auf Auskunft,
 			Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch
-			gegen Verarbeitungen auf Grundlage berechtigter Interessen. Zur Ausübung dieser Rechte oder
-			für Fragen zum Datenschutz wende dich an den Verantwortlichen.
+			gegen Verarbeitungen auf Grundlage berechtigter Interessen. Für Fragen zu dieser Website oder
+			zur Ausübung deiner Rechte gegenüber dem Website-Verantwortlichen wende dich an die oben
+			genannte Kontaktadresse. Für Anfragen zu Daten, die GitHub als eigener Verantwortlicher
+			verarbeitet, nennt GitHub <a href="mailto:privacy@github.com">privacy@github.com</a> und
+			den <a href="mailto:dpo@github.com">GitHub-Datenschutzbeauftragten</a>.
 		</p>
 		<p>
 			Du kannst dich außerdem bei einer Datenschutzaufsichtsbehörde beschweren, insbesondere bei der
