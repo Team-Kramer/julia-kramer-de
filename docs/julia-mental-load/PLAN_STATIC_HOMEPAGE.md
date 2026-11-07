@@ -40,13 +40,13 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 
 | Phase | Status | Notes |
 |---|---|---|
-| 0. Decisions | In progress | GitHub Pages is confirmed as the host and its published disclosures are documented; Pages log retention, DPA applicability to visitor logs, the operator's DPO status, and editorial approvals remain open |
-| 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, and validation CI are in place; deployment remains intentionally unchanged |
+| 0. Decisions | In progress | Julia approved the copy and confirmed the About-page photos are private images; qualified GitHub disclosures are accepted for v1. Production deployment and verification remain |
+| 1. Static foundation and design tokens | Complete | App, tokens, prerendering, CNAME output, and validation CI are in place; GitHub Actions production deployment is being prepared |
 | 2. Tool model and scoring | Complete | Versioned question data, guarded scoring, and unit tests implemented |
 | 3. Shared UI and navigation | In progress | Shared responsive shell and accessible controls implemented; manual assistive-technology review remains |
-| 4. Core pages and tool discovery | In progress | Core routes and legal pages are built; the privacy route is indexable and included in the sitemap; editorial and legal review remain |
+| 4. Core pages and tool discovery | Complete | Core routes and legal pages are built; both legal pages are indexable and in the sitemap; Julia approved the copy |
 | 5. Mental-Load-Check | In progress | Client-side flow passes end-to-end browser checks; manual accessibility and device QA remain |
-| 6. Denklabor and editorial foundation | In progress | Validated Markdown pipeline, static article routes, and category filters are implemented; article approval remains |
+| 6. Denklabor and editorial foundation | Complete | Validated Markdown pipeline, static article routes, and category filters are implemented; Julia approved the copy |
 | 7. Quality, legal, SEO, and launch | In progress | Build, route smoke tests, sitemap, robots, and hosting research are complete; legal, accessibility, and release gates remain |
 
 ## Current state
@@ -56,9 +56,9 @@ The first tool is the **Mental-Load-Check**, a five-minute, 15-question reflecti
 - A SvelteKit + TypeScript + Tailwind v4 static app now lives in the repository root. All implemented routes prerender, and `static/CNAME` carries `julia-kramer.de` into `build/`.
 - The existing prototype under `docs/julia-mental-load/src/` remains untouched. The production app implementation is in the root `src/`; decide later whether the docs prototype should be archived or removed after review.
 - `docs/julia-mental-load/design.md` and `00-Mental-Load-Check-Fragen.md` remain the product/design source of truth. The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested.
-- GitHub Pages is confirmed as the host, configured for the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. A validation-only GitHub Actions workflow was added; deployment configuration was deliberately not changed.
+- GitHub Pages currently serves the legacy build from `main` at `/`, with `julia-kramer.de` and HTTPS enforcement. Julia approved switching to a GitHub Actions build of the new static site; the deployment workflow is being added.
 - Local verification passes: `pnpm check` (0 errors/warnings), 11 unit tests, and `pnpm build`; production-preview checks cover prerendered routes, the sitemap, robots file, `CNAME`, and the 404 response. Browser checks cover category filtering and completing/restarting the check.
-- The About page uses Julia's supplied profile copy and optimized local versions of the existing images as requested. The Impressum includes the supplied contact and editorial responsibility details. Datenschutz is indexable and listed in the sitemap; it describes GitHub's published disclosures and distinguishes them from unresolved Pages log-retention and DPA-applicability details.
+- Julia approved the supplied site copy and confirmed the About-page photos are private images. The Impressum includes the supplied contact and editorial responsibility details. Impressum and Datenschutz are indexable and listed in the sitemap; Datenschutz distinguishes GitHub's published disclosures from unresolved Pages log-retention and DPA-applicability details, which Julia accepts for v1.
 
 ## Feature inventory
 
@@ -218,10 +218,10 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 - [x] Build `/` with the hero headline **“Mental Load reduzieren – mit System statt Schuldgefühlen”**, a short approach, tool/article entry points, and a low-pressure support link.
 - [x] Build `/werkzeuge` with the Mental-Load-Check first and an accurate status for each planned tool.
-- [x] Build `/ueber` using Julia's supplied profile copy and image references; confirm image-use rights before release.
+- [x] Build `/ueber` using Julia's supplied profile copy and private images; Julia confirmed the images are theirs.
 - [x] Build `/begleitung` as a brief, factual, non-sales invitation; no pricing, urgency, booking, or unsupported outcomes.
 - [x] Add unique page titles/descriptions and social preview metadata to public routes; Datenschutz has a canonical URL and is indexable.
-- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; the privacy notice documents GitHub's published details, while exact GitHub Pages log-retention/DPA applicability and final legal review remain open.
+- [x] Add static Impressum and Datenschutz pages based on official sources. Contact and editorial responsibility are supplied; Julia approved the copy and accepts the qualified GitHub Pages log-retention/DPA-applicability disclosures for v1.
 
 **Done when:** all core pages prerender, navigation is coherent, and the visitor can reach the first working tool from home and the tool directory.
 
@@ -274,16 +274,16 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### 7b. Privacy and legal
 
-- [x] Confirm the hosting platform and available documentation about request logs, international transfers, and third-party resources; the published privacy notice describes GitHub's disclosures and qualifies the unresolved log-retention and DPA-applicability details.
+- [x] Confirm the hosting platform and available documentation about request logs, international transfers, and third-party resources; the published privacy notice describes GitHub's disclosures and qualifies the unresolved log-retention and DPA-applicability details, accepted by Julia for v1.
 - [x] Ensure the questionnaire makes no external requests containing answer data.
-- [ ] Do not add analytics, cookies, external form processors, or newsletter providers without an explicit decision, consent review where applicable, and matching disclosures.
-- [ ] Verify Impressum and Datenschutz reflect the live site and current contact/hosting details before release.
+- [x] Keep analytics, cookies, external form processors, and newsletter providers out of v1; disclose new services before adding them.
+- [ ] Verify Impressum and Datenschutz against the live site's hosting and contact details after deployment.
 
 ### 7c. SEO and discoverability
 
 - [x] German locale and meaningful page titles/descriptions; no duplicate titles or missing canonical URLs.
 - [x] Open Graph metadata with an approved image or a safe text-only fallback.
-- [x] Generate a sitemap and robots file for public static routes; include the indexable Datenschutz route in the sitemap.
+- [x] Generate a sitemap and robots file for public static routes; include both indexable legal pages in the sitemap.
 - [ ] Add structured data only where accurate (for example, `Person` and `Article`); do not add product or medical claims.
 - [x] Verify internal links, custom domain output, HTTPS configuration, sitemap/robots, and not-found behavior in the production preview; live deployment remains pending.
 
@@ -297,8 +297,8 @@ Resolve these before committing to the site rewrite. Recommendations are default
 
 ### 7e. Content and tone review
 
-- [ ] Review all visible text for calm, adult, clear, nonjudgmental German. The current copy follows that direction but still needs Julia's editorial approval.
-- [ ] Remove unsupported promises, coach clichés, pressure tactics, and ambiguous “high load” verdicts.
+- [x] Review all visible text for calm, adult, clear, nonjudgmental German; Julia approved the site copy.
+- [x] Remove unsupported promises, coach clichés, pressure tactics, and ambiguous “high load” verdicts.
 - [ ] Ask a representative user to find and complete the check without explanation, then review comprehension and emotional tone.
 
 **Done when:** production checks pass, privacy and legal copy match actual behavior, the custom domain works, and the site remains useful without any paid service.
